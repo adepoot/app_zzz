@@ -1,10 +1,10 @@
 {
     "name": "De Zwarte Zeverzwijnen",
-    "short_name": "De Zwarte Zeverzwijnen",
+    "short_name": "ZZZ",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
+    "background_color": "#000000",
+    "theme_color": "#000000",
     "description": "Shows statistics of the futsal team De Zwarte Zeverzwijnen",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
