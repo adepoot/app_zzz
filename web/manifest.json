@@ -1,5 +1,5 @@
 {
-    "name": "app_zzz",
+    "name": "De Zwarte Zeverzwijnen",
     "short_name": "app_zzz",
     "start_url": ".",
     "display": "standalone",
@@ -9,6 +9,11 @@
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
+        {
+            "src": "icon/launcher_500.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        },
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
