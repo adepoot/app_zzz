@@ -3,6 +3,8 @@ import 'package:app_zzz/api/player_stats.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'goals_detail_page.dart';
+
 class PlayerDetailPage extends StatefulWidget {
   final String playerId;
   final String playerName;
@@ -43,6 +45,10 @@ class _PlayerDetailPageState extends State<PlayerDetailPage> {
                     title:
                         const Text('Goals', style: TextStyle(fontSize: 18.0)),
                     trailing: Text('${stats.goals}'),
+                    onTap: () => {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => GoalsDetailPage(player: stats.player)))
+                    },
                   ),
                   ListTile(
                     title: const Text(

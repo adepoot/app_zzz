@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:app_zzz/api/player.dart';
 import 'package:app_zzz/api/player_stats.dart';
+import 'package:app_zzz/api/stats_detail.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
@@ -39,5 +40,18 @@ class Api {
           json.decode(const Utf8Decoder().convert(response.body.codeUnits)));
     }
     throw Exception('Failed to load the statistics of player with id [$id]');
+  }
+
+  static Future<List<StatsDetail>> fetchGoalStatsForPlayer(
+      final String id) async {
+    final response = await http.get(Uri.parse(_baseUri + '/players/$id/stats/goals'));
+
+    if (response.statusCode == 200) {
+      return (json.decode(const Utf8Decoder().convert(response.body.codeUnits))
+              as List)
+          .map((e) => StatsDetail.fromJson(e))
+          .toList();
+    }
+    throw Exception('Failed to load the goal statistics of the players');
   }
 }

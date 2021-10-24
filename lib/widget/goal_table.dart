@@ -1,37 +1,42 @@
 import 'package:app_zzz/api/player.dart';
+import 'package:app_zzz/page/goals_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class StatsRow {
+class GoalRow {
   final int amount;
-  final Player? player;
+  final Player player;
 
-  StatsRow({required this.amount, required this.player});
+  GoalRow({required this.amount, required this.player});
 }
 
-class StatsTable extends StatelessWidget {
+class GoalTable extends StatelessWidget {
   final String firstHeader;
   final String secondHeader;
-  final List<StatsRow> rows;
+  final List<GoalRow> rows;
 
-  const StatsTable(
+  const GoalTable(
       {Key? key,
       required this.firstHeader,
       required this.secondHeader,
       required this.rows})
       : super(key: key);
 
-  DataRow toDataRow(BuildContext context, StatsRow row) {
-    String name = row.player != null
-        ? row.player!.firstName + ' ' + row.player!.lastName
-        : '/';
-
+  DataRow toDataRow(BuildContext context, GoalRow row) {
     return DataRow(cells: [
-      DataCell(Text(
-        '${row.amount}',
-        textAlign: TextAlign.center,
-      )),
-      DataCell(Text(name)),
+      DataCell(
+          Text(
+            '${row.amount}',
+            textAlign: TextAlign.center,
+          ), onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => GoalsDetailPage(player: row.player)));
+      }),
+      DataCell(Text(row.player.firstName + ' ' + row.player.lastName),
+          onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => GoalsDetailPage(player: row.player)));
+      }),
     ]);
   }
 

@@ -1,6 +1,6 @@
 import 'package:app_zzz/api/api.dart';
 import 'package:app_zzz/api/player_stats.dart';
-import 'package:app_zzz/widget/table.dart';
+import 'package:app_zzz/widget/goal_table.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +14,8 @@ class GoalPage extends StatefulWidget {
 class _GoalPageState extends State<GoalPage> {
   late Future<List<PlayerStats>> playerStats;
 
-  CustomRow toRow(PlayerStats playerStats) {
-    return CustomRow(amount: playerStats.goals, player: playerStats.firstName + ' ' + playerStats.lastName);
+  GoalRow toRow(PlayerStats playerStats) {
+    return GoalRow(amount: playerStats.goals, player: playerStats.player);
   }
 
   @override
@@ -26,7 +26,7 @@ class _GoalPageState extends State<GoalPage> {
         future: playerStats,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return CustomTable(
+            return GoalTable(
                 firstHeader: 'Goals',
                 secondHeader: 'Player',
                 rows: snapshot.data!.map((e) => toRow(e)).toList());

@@ -14,8 +14,9 @@ class SelectionPage extends StatefulWidget {
 class _SelectionPageState extends State<SelectionPage> {
   late Future<List<PlayerStats>> playerStats;
 
-  CustomRow toRow(PlayerStats playerStats) {
-    return CustomRow(amount: playerStats.selections, player: playerStats.firstName + ' ' + playerStats.lastName);
+  StatsRow toRow(PlayerStats playerStats) {
+    return StatsRow(
+        amount: playerStats.selections, player: playerStats.player);
   }
 
   @override
@@ -26,7 +27,7 @@ class _SelectionPageState extends State<SelectionPage> {
         future: playerStats,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return CustomTable(
+            return StatsTable(
                 firstHeader: 'Selections',
                 secondHeader: 'Player',
                 rows: snapshot.data!.map((e) => toRow(e)).toList());

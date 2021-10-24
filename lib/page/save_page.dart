@@ -14,8 +14,8 @@ class SavePage extends StatefulWidget {
 class _SavePageState extends State<SavePage> {
   late Future<List<PlayerStats>> playerStats;
 
-  CustomRow toRow(PlayerStats playerStats) {
-    return CustomRow(amount: playerStats.saves, player: playerStats.firstName + ' ' + playerStats.lastName);
+  StatsRow toRow(PlayerStats playerStats) {
+    return StatsRow(amount: playerStats.saves, player: playerStats.player);
   }
 
   @override
@@ -26,7 +26,7 @@ class _SavePageState extends State<SavePage> {
         future: playerStats,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return CustomTable(
+            return StatsTable(
                 firstHeader: 'Saves',
                 secondHeader: 'Player',
                 rows: snapshot.data!.map((e) => toRow(e)).toList());

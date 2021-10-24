@@ -14,8 +14,8 @@ class AssistPage extends StatefulWidget {
 class _AssistPageState extends State<AssistPage> {
   late Future<List<PlayerStats>> playerStats;
 
-  CustomRow toRow(PlayerStats playerStats) {
-    return CustomRow(amount: playerStats.assists, player: playerStats.firstName + ' ' + playerStats.lastName);
+  StatsRow toRow(PlayerStats playerStats) {
+    return StatsRow(amount: playerStats.assists, player: playerStats.player);
   }
 
   @override
@@ -26,7 +26,7 @@ class _AssistPageState extends State<AssistPage> {
         future: playerStats,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return CustomTable(
+            return StatsTable(
                 firstHeader: 'Assists',
                 secondHeader: 'Player',
                 rows: snapshot.data!.map((e) => toRow(e)).toList());

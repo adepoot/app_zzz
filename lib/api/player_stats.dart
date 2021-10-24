@@ -1,16 +1,14 @@
+import 'package:app_zzz/api/player.dart';
+
 class PlayerStats {
-  final String id;
-  final String firstName;
-  final String lastName;
+  final Player player;
   final int selections;
   final int goals;
   final int assists;
   final int saves;
 
   PlayerStats(
-      {required this.id,
-      required this.firstName,
-      required this.lastName,
+      {required this.player,
       required this.selections,
       required this.goals,
       required this.assists,
@@ -18,9 +16,7 @@ class PlayerStats {
 
   factory PlayerStats.fromJson(Map<String, dynamic> json) {
     return PlayerStats(
-        id: json['id'],
-        firstName: json['first_name'],
-        lastName: json['last_name'],
+        player: Player.fromJson(json['player']),
         selections: json['selections'],
         goals: json['goals'],
         assists: json['assists'],
