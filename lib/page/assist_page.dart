@@ -1,6 +1,6 @@
 import 'package:app_zzz/api/api.dart';
 import 'package:app_zzz/api/player_stats.dart';
-import 'package:app_zzz/widget/table.dart';
+import 'package:app_zzz/widget/assist_table.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +14,8 @@ class AssistPage extends StatefulWidget {
 class _AssistPageState extends State<AssistPage> {
   late Future<List<PlayerStats>> playerStats;
 
-  StatsRow toRow(PlayerStats playerStats) {
-    return StatsRow(amount: playerStats.assists, player: playerStats.player);
+  AssistRow toRow(PlayerStats playerStats) {
+    return AssistRow(amount: playerStats.assists, player: playerStats.player);
   }
 
   @override
@@ -26,7 +26,7 @@ class _AssistPageState extends State<AssistPage> {
         future: playerStats,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return StatsTable(
+            return AssistTable(
                 firstHeader: 'Assists',
                 secondHeader: 'Player',
                 rows: snapshot.data!.map((e) => toRow(e)).toList());

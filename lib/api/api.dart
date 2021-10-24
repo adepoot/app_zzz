@@ -44,7 +44,8 @@ class Api {
 
   static Future<List<StatsDetail>> fetchGoalStatsForPlayer(
       final String id) async {
-    final response = await http.get(Uri.parse(_baseUri + '/players/$id/stats/goals'));
+    final response =
+        await http.get(Uri.parse(_baseUri + '/players/$id/stats/goals'));
 
     if (response.statusCode == 200) {
       return (json.decode(const Utf8Decoder().convert(response.body.codeUnits))
@@ -53,5 +54,19 @@ class Api {
           .toList();
     }
     throw Exception('Failed to load the goal statistics of the players');
+  }
+
+  static Future<List<StatsDetail>> fetchAssistStatsForPlayer(
+      final String id) async {
+    final response =
+        await http.get(Uri.parse(_baseUri + '/players/$id/stats/assists'));
+
+    if (response.statusCode == 200) {
+      return (json.decode(const Utf8Decoder().convert(response.body.codeUnits))
+              as List)
+          .map((e) => StatsDetail.fromJson(e))
+          .toList();
+    }
+    throw Exception('Failed to load the assist statistics of the players');
   }
 }

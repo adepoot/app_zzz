@@ -1,5 +1,6 @@
 import 'package:app_zzz/api/api.dart';
 import 'package:app_zzz/api/player_stats.dart';
+import 'package:app_zzz/page/assists_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,8 +47,9 @@ class _PlayerDetailPageState extends State<PlayerDetailPage> {
                         const Text('Goals', style: TextStyle(fontSize: 18.0)),
                     trailing: Text('${stats.goals}'),
                     onTap: () => {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => GoalsDetailPage(player: stats.player)))
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              GoalsDetailPage(player: stats.player)))
                     },
                   ),
                   ListTile(
@@ -56,6 +58,11 @@ class _PlayerDetailPageState extends State<PlayerDetailPage> {
                       style: TextStyle(fontSize: 18.0),
                     ),
                     trailing: Text('${stats.assists}'),
+                    onTap: () => {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              AssistsDetailPage(player: stats.player)))
+                    },
                   ),
                   ListTile(
                     title:
