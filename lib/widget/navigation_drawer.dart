@@ -1,5 +1,5 @@
 import 'package:app_zzz/page/matches_page.dart';
-import 'package:app_zzz/page/player_page.dart';
+import 'package:app_zzz/page/players_page.dart';
 import 'package:app_zzz/page/statistics_page.dart';
 import 'package:flutter/material.dart';
 

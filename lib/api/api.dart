@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:app_zzz/api/player.dart';
+import 'package:app_zzz/api/match.dart';
 import 'package:app_zzz/api/player_stats.dart';
 import 'package:app_zzz/api/stats_detail.dart';
 import 'package:http/http.dart' as http;
@@ -18,6 +19,18 @@ class Api {
           .toList();
     }
     throw Exception('Failed to load the players');
+  }
+
+  static Future<List<Match>> fetchMatches() async {
+    final response = await http.get(Uri.parse(_baseUri + '/games'));
+
+    if (response.statusCode == 200) {
+      return (json.decode(const Utf8Decoder().convert(response.body.codeUnits))
+              as List)
+          .map((e) => Match.fromJson(e))
+          .toList();
+    }
+    throw Exception('Failed to load the matches');
   }
 
   static Future<List<PlayerStats>> fetchPlayerStats() async {
