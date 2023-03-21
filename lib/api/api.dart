@@ -7,7 +7,7 @@ import 'package:app_zzz/api/stats_detail.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  static const String _baseUri = 'https://ms-zzz.herokuapp.com/api';
+  static const String _baseUri = 'https://ms-zzz.onrender.com/api';
 
   static Future<List<Player>> fetchPlayers() async {
     final response = await http.get(Uri.parse(_baseUri + '/players'));
