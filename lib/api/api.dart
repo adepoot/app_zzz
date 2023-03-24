@@ -8,8 +8,7 @@ import 'package:app_zzz/api/team_stats.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  // static const String _baseUri = 'https://ms-zzz.onrender.com/api';
-  static const String _baseUri = 'http://localhost:8080/api';
+  static const String _baseUri = 'https://ms-zzz.onrender.com/api';
 
   static Future<List<TeamStats>> fetchCurrentStandings() async {
     final response = await http.get(Uri.parse('$_baseUri/standings'));
