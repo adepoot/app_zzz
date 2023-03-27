@@ -8050,7 +8050,7 @@ Jb:function Jb(){},
 QE(){var s=0,r=A.a1(t.DR),q,p
 var $async$QE=A.a2(function(a,b){if(a===1)return A.Z(b,r)
 while(true)switch(s){case 0:s=3
-return A.a7(A.rt(A.eZ("https://ms-zzz.fly.dev/api/standings")),$async$QE)
+return A.a7(A.rt(A.eZ("http://34.135.193.242/api/standings")),$async$QE)
 case 3:p=b
 if(p.b===200){q=J.e0(t.j.a(B.a0.bN(0,B.ah.bX(new A.d0(A.rs(A.ri(p.e).c.a.h(0,"charset")).bN(0,p.w))))),new A.QF(),t.vx).c4(0)
 s=1
@@ -8060,7 +8060,7 @@ return A.a0($async$QE,r)},
 QM(){var s=0,r=A.a1(t.Rt),q,p
 var $async$QM=A.a2(function(a,b){if(a===1)return A.Z(b,r)
 while(true)switch(s){case 0:s=3
-return A.a7(A.rt(A.eZ("https://ms-zzz.fly.dev/api/players")),$async$QM)
+return A.a7(A.rt(A.eZ("http://34.135.193.242/api/players")),$async$QM)
 case 3:p=b
 if(p.b===200){q=J.e0(t.j.a(B.a0.bN(0,B.ah.bX(new A.d0(A.rs(A.ri(p.e).c.a.h(0,"charset")).bN(0,p.w))))),new A.QN(),t.Uo).c4(0)
 s=1
@@ -8070,7 +8070,7 @@ return A.a0($async$QM,r)},
 QI(){var s=0,r=A.a1(t.w6),q,p
 var $async$QI=A.a2(function(a,b){if(a===1)return A.Z(b,r)
 while(true)switch(s){case 0:s=3
-return A.a7(A.rt(A.eZ("https://ms-zzz.fly.dev/api/games")),$async$QI)
+return A.a7(A.rt(A.eZ("http://34.135.193.242/api/games")),$async$QI)
 case 3:p=b
 if(p.b===200){q=J.e0(t.j.a(B.a0.bN(0,B.ah.bX(new A.d0(A.rs(A.ri(p.e).c.a.h(0,"charset")).bN(0,p.w))))),new A.QJ(),t.Vv).c4(0)
 s=1
@@ -8080,7 +8080,7 @@ return A.a0($async$QI,r)},
 o2(){var s=0,r=A.a1(t.zz),q,p
 var $async$o2=A.a2(function(a,b){if(a===1)return A.Z(b,r)
 while(true)switch(s){case 0:s=3
-return A.a7(A.rt(A.eZ("https://ms-zzz.fly.dev/api/stats/players")),$async$o2)
+return A.a7(A.rt(A.eZ("http://34.135.193.242/api/stats/players")),$async$o2)
 case 3:p=b
 if(p.b===200){q=J.e0(t.j.a(B.a0.bN(0,B.ah.bX(new A.d0(A.rs(A.ri(p.e).c.a.h(0,"charset")).bN(0,p.w))))),new A.QL(),t.fF).c4(0)
 s=1
@@ -8090,7 +8090,7 @@ return A.a0($async$o2,r)},
 QK(a){var s=0,r=A.a1(t.fF),q,p
 var $async$QK=A.a2(function(b,c){if(b===1)return A.Z(c,r)
 while(true)switch(s){case 0:s=3
-return A.a7(A.rt(A.eZ("https://ms-zzz.fly.dev/api/players/"+a+"/stats")),$async$QK)
+return A.a7(A.rt(A.eZ("http://34.135.193.242/api/players/"+a+"/stats")),$async$QK)
 case 3:p=c
 if(p.b===200){q=A.ak8(B.a0.bN(0,B.ah.bX(new A.d0(A.rs(A.ri(p.e).c.a.h(0,"charset")).bN(0,p.w)))))
 s=1
@@ -8100,7 +8100,7 @@ return A.a0($async$QK,r)},
 QG(a){var s=0,r=A.a1(t.PY),q,p
 var $async$QG=A.a2(function(b,c){if(b===1)return A.Z(c,r)
 while(true)switch(s){case 0:s=3
-return A.a7(A.rt(A.eZ("https://ms-zzz.fly.dev/api/players/"+a+"/stats/goals")),$async$QG)
+return A.a7(A.rt(A.eZ("http://34.135.193.242/api/players/"+a+"/stats/goals")),$async$QG)
 case 3:p=c
 if(p.b===200){q=J.e0(t.j.a(B.a0.bN(0,B.ah.bX(new A.d0(A.rs(A.ri(p.e).c.a.h(0,"charset")).bN(0,p.w))))),new A.QH(),t.wQ).c4(0)
 s=1
@@ -8110,7 +8110,7 @@ return A.a0($async$QG,r)},
 QC(a){var s=0,r=A.a1(t.PY),q,p
 var $async$QC=A.a2(function(b,c){if(b===1)return A.Z(c,r)
 while(true)switch(s){case 0:s=3
-return A.a7(A.rt(A.eZ("https://ms-zzz.fly.dev/api/players/"+a+"/stats/assists")),$async$QC)
+return A.a7(A.rt(A.eZ("http://34.135.193.242/api/players/"+a+"/stats/assists")),$async$QC)
 case 3:p=c
 if(p.b===200){q=J.e0(t.j.a(B.a0.bN(0,B.ah.bX(new A.d0(A.rs(A.ri(p.e).c.a.h(0,"charset")).bN(0,p.w))))),new A.QD(),t.wQ).c4(0)
 s=1
