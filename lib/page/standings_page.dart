@@ -19,12 +19,14 @@ class _StandingsPageState extends State<StandingsPage> {
     return InteractiveViewer(
         constrained: false,
         child: DataTable(
-          headingTextStyle: const TextStyle(fontWeight: FontWeight.bold),
+            headingTextStyle: const TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.black),
             columns: const <DataColumn>[
               DataColumn(label: Text("Team")),
               DataColumn(label: Text("#")),
               DataColumn(label: Text("Pts")),
               DataColumn(label: Text("MP")),
+              DataColumn(label: Text("GD")),
             ],
             rows: List<DataRow>.generate(
                 standings.length,
@@ -33,6 +35,7 @@ class _StandingsPageState extends State<StandingsPage> {
                       DataCell(Text("${standings[index].position}")),
                       DataCell(Text("${standings[index].points}")),
                       DataCell(Text("${standings[index].gamesPlayed}")),
+                      DataCell(Text("${standings[index].goalsDifference}")),
                     ]))));
   }
 
