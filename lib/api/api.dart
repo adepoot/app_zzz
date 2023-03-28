@@ -8,7 +8,7 @@ import 'package:app_zzz/api/team_stats.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  static const String _baseUri = 'http://34.135.193.242/api';
+  static const String _baseUri = 'https://de-zwarte-zeverzwijnen.ew.r.appspot.com/api';
 
   static Future<List<TeamStats>> fetchCurrentStandings() async {
     final response = await http.get(Uri.parse('$_baseUri/standings'));
